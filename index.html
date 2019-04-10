@@ -1,32 +1,49 @@
 <!DOCTYPE HTML>
 <html>
  <head>
-  <meta charset="utf-8">
-  <title>Secret</title>
-  <link href="styles.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Secret</title>
+	<link href="styles.css" rel="stylesheet">
+	<script src="add.js"></script>
  </head>
- <body>
-        <h1>Секреты</h1>
-        <br><br>
-        
-        <div class="inthis">
-             <div class="block">
-                 <h1>Мои</h1>
-                 <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
-                </div>
-             <div class="block">
-                 <h1>Доспупные</h1>
-            </div>
-             <form action="#" method="post">
-                    <input type="button" value="Добавить" onclick="buttonClick (this)">
-            </form>
-        </div>
-        
-        </body>
-</html>
+	 <body>
+	        <h1>Секреты</h1>
+	        <br><br>
+	        
+	        <div class="inthis">
+	             <div id="mySecret" class="block">
+	                <h1>Мои</h1>
+	                <ul>
+	                        <li>1</li>
+	                        <li>2</li>
+	                        <li>3</li>
+	                        <li>4</li>
+	                        <li>5</li>
+	                </ul>
+	             </div>
+
+			     <div id="myDostyp" class="block">
+			        <h1>Доспупные</h1>
+			     </div>
+
+	            <div id="addSecret">
+			        <form action="#" method="post">
+			        	<label> <h2>Название</h2> 
+			        	<input type="text" name="name">
+			        	</label>
+			        	<br>
+			        	<label><h2>Текст</h2> 
+			        	<textarea rows="10" cols="45"></textarea>
+			        	</label>
+			        </form>
+			    </div>
+
+	            <br>
+	            <button id="butAdd" type="button" onclick="myFunction()">Добавить секрет</button>
+	            <!-- <form action="#" method="post">
+	                <input type="button" value="Добавить" onclick="buttonClick (this)">
+	            </form> -->
+	        </div>
+	        
+	 </body>
+ </html>

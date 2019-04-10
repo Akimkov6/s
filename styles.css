@@ -25,3 +25,14 @@ ul{
     text-align:left;
 }
 
+#addSecret{
+    margin:10pt;
+    padding:10pt;
+    border:2px solid #095353;
+    border-radius:4pt;
+    width:70%;
+    height:400px;
+    display:none;
+    vertical-align: middle;}
+}
+
