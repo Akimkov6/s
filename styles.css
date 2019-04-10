@@ -1,0 +1,27 @@
+h1{
+    text-align:center;
+}
+
+.inthis{
+    margin: 0 10%;
+    text-align:center;
+    width:80%;
+    border:2px solid #4da8a8;
+    background:silver;
+    box-shadow:0 0 10pt #220f0f;
+    padding:10pt;
+    border-radius:4pt;}
+.block{
+    margin:10pt;
+    padding:10pt;
+    border:2px solid #095353;
+    border-radius:4pt;
+    width:30%;
+    height:400px;
+    display:inline-block;
+    vertical-align: middle;}
+
+ul{
+    text-align:left;
+}
+
