@@ -7,13 +7,16 @@ class Version20190410113543 extends Version
 {
     protected $description = 'Создание таблицы для истории названий лотов';
 
-    private $tableName = 'a_history_lots';
+    private $a1_secret = 'a1_secret';
+    private $a1_dostyp ='a1_dostyp';
 
     public function up()
     {
         global $DB;
 
-        $sql = $this->getSQLCreateTable();
+        $sql = $this->getSQLCreateTableSecret();
+        $DB->Query($sql);
+        $sql = $this->getSQLCreateTableDostyp();
         $DB->Query($sql);
     }
 
@@ -21,28 +24,29 @@ class Version20190410113543 extends Version
     {
         global $DB;
 
-        $sql = "DROP TABLE {$this->a1_secret};";
-        $sql = "DROP TABLE {$this->a1_dostyp};";
+        $sql = "DROP TABLE IF EXISTS `{$this->a1_secret}`, `{$this->a1_dostyp}`";
         $DB->Query($sql);
     }
 
-    private function getSQLCreateTable()
+    private function getSQLCreateTableSecret()
     {
-        return <<<SQL
-        
-CREATE TABLE {$this->a1_secret} (
-    ID INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  NAME VARCHAR(15) NOT NULL,
-  Text VARCHAR(1023) NOT NULL
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-CREATE TABLE {$this->a1_dostyp} (
-    ID INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ID_Secret INT(11) UNSIGNED NOT NULL,
-    ID_Dostyp INT(11) UNSIGNED NOT NULL
-) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-SQL;
-
+    return "CREATE TABLE IF NOT EXISTS `{$this->a1_secret}`(
+    `id` MEDIUMINT NOT NULL AUTO_INCREMENT NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `text` varchar(1023) NOT NULL,
+     PRIMARY KEY (id));
+     ";
     }
+
+    private function getSQLCreateTableDostyp()
+    {
+    return "CREATE TABLE IF NOT EXISTS `{$this->a1_dostyp}`(
+    `id` MEDIUMINT NOT NULL AUTO_INCREMENT NOT NULL,
+    `secret_id` MEDIUMINT NOT NULL,
+    `user_id` MEDIUMINT NOT NULL,
+     PRIMARY KEY (id));
+     ";
+    }
+
+
 }
