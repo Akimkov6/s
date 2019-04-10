@@ -21,23 +21,28 @@ class Version20190410113543 extends Version
     {
         global $DB;
 
-        $sql = "DROP TABLE {$this->tableName};";
+        $sql = "DROP TABLE {$this->a1_secret};";
+        $sql = "DROP TABLE {$this->a1_dostyp};";
         $DB->Query($sql);
     }
 
     private function getSQLCreateTable()
     {
         return <<<SQL
-CREATE TABLE {$this->tableName} (
+        
+CREATE TABLE {$this->a1_secret} (
     ID INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  NAME_LOTS VARCHAR(15) NOT NULL,
-  RPS_NAME VARCHAR(15) NOT NULL,
-  MONTH VARCHAR(15) NOT NULL,
-  YEAR INT(4) UNSIGNED NOT NULL,
-  DEPARTURE_STATION_ID INT(11) UNSIGNED NOT NULL,
-  DESTINATION_STATION_ID INT(11) UNSIGNED NOT NULL,
-  FREIGHT_ID INT(11) UNSIGNED NOT NULL
+  NAME VARCHAR(15) NOT NULL,
+  Text VARCHAR(1023) NOT NULL
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE {$this->a1_dostyp} (
+    ID INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ID_Secret INT(11) UNSIGNED NOT NULL,
+    ID_Dostyp INT(11) UNSIGNED NOT NULL
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 SQL;
+
     }
 }
