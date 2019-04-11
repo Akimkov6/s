@@ -33,6 +33,22 @@ ul{
     width:70%;
     height:400px;
     display:none;
-    vertical-align: middle;}
+    vertical-align: middle;
 }
 
+#readSecret{
+    margin:10pt;
+    padding:10pt;
+    border:2px solid #095353;
+    border-radius:4pt;
+    width:70%;
+    height:400px;
+    display:none;
+    vertical-align: middle;
+}
+
+
+tr:hover td {
+    opacity: 0.5;
+    cursor: pointer;
+}
