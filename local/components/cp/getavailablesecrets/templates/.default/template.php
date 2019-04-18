@@ -4,12 +4,14 @@
 <? $APPLICATION->ShowHead(); ?> <!-- !!!!!!!!!!!!!!!!!!!!!!!! -->
       
       <div id="myDostyp" class="block">
-            <h1>Доспупные</h1>
+          <div class="blockIn">
+              <h1>Доступные секреты:</h1>
+          </div>
             <table id="tableDostypnoSecret"> 
                   <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Text</th>
+                        <th class="colomn1">ID</div></th>
+                        <th class="colomn2">Заголовок</div></th>
+                        <th class="colomn3">Описание</div></th>
                         <th></th>
                   </tr>
          

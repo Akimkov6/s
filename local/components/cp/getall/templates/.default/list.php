@@ -12,7 +12,8 @@
 <h1>Секреты</h1>
 <br><br>
 <div class="inthis">
-<?          
+<?
+    // компонент списка моих секретов
     $APPLICATION->IncludeComponent(
         "cp:getmysecrets",
         ".default",
@@ -22,6 +23,8 @@
         ),
         false
         );
+
+    // компонент списка доступных мне секретов
     $APPLICATION->IncludeComponent(
         "cp:getavailablesecrets",
         ".default",

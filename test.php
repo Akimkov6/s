@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Мебельная компания");
+$APPLICATION->SetTitle("Секретики");
 ?>
 
 <?$APPLICATION->IncludeComponent(
@@ -12,5 +12,6 @@ Array(
 $component
 );
 ?>
+
 
 </p><?require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");?> 

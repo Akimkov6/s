@@ -2,7 +2,6 @@
 
 namespace App\Query;
 
-use App\Query\GetUserNameById;
 use App\Model\Secrets;
 
 class GetSecrets implements \Areal\Query\QueryInterface
