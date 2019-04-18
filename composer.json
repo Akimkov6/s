@@ -5,7 +5,9 @@
     }
   },
   "require": {
-    "andreyryabin/sprint.migration": "dev-master"
+    "andreyryabin/sprint.migration": "dev-master",
+    "aak74/bx-data": "^0.6.3",
+    "nikic/fast-route": "^1.3"
   }
 }
 
